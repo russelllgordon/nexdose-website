@@ -40,6 +40,12 @@ section.alt .card{background:var(--bg)}
 .shots{display:flex;gap:16px;overflow-x:auto;padding-bottom:8px;scroll-snap-type:x mandatory}
 .shot{flex:0 0 220px;scroll-snap-align:start;text-align:center;font-size:14px;color:var(--muted)}
 .shot{margin:0}
+.shot .ph{aspect-ratio:660/1434;border-radius:28px;border:2px dashed var(--line);background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px;margin-bottom:10px;color:var(--muted)}
+.shot.watch{flex-basis:180px}
+.shot.watch .ph{aspect-ratio:416/496;border-radius:44px}
+.shot-row{margin-top:36px}
+.shot-row h3{font-size:22px}
+.row-intro{color:var(--muted);margin:0 0 16px}
 .shot img{display:block;width:100%;border-radius:28px;box-shadow:0 10px 30px rgba(40,20,90,.18);margin-bottom:10px}
 .plus-grid{display:grid;grid-template-columns:1fr 260px;gap:40px;align-items:start}
 .plus-shot{flex:none}
