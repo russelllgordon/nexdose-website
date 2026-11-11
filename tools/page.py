@@ -2,7 +2,7 @@ import os, sys
 SITE = "https://www.nexdose.app"
 NAV = [("", "Home"), ("plus/", "Plus"), ("how-to/", "How-to"), ("about/", "About"), ("support/", "Support")]
 FOOT = [("privacy-policy/", "Privacy Policy"), ("support/", "Support")]
-APPSTORE = "#get"  # TODO: App Store link once 1.0 is live
+APPSTORE = "https://apps.apple.com/app/id6824021246"
 
 def render(slug, title, desc, body, extra_head=""):
     depth = slug.count("/")
@@ -24,6 +24,7 @@ def render(slug, title, desc, body, extra_head=""):
 <meta property="og:url" content="{url}">
 <meta property="og:site_name" content="Nexdose">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="apple-itunes-app" content="app-id=6824021246">
 <meta name="theme-color" content="#6a3fd6">
 <link rel="icon" href="{r}assets/favicon-32.png" type="image/png">
 <link rel="apple-touch-icon" href="{r}assets/apple-touch-icon.png">
