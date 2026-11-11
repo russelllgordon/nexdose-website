@@ -4,7 +4,7 @@ faq = [
 ("My data isn't syncing between devices.","Sync uses your own private iCloud account. Make sure you're signed in to the same Apple Account on each device and that iCloud is turned on for Nexdose in iPhone Settings &gt; your name &gt; iCloud. We can't see or restore your iCloud data."),
 ("How do I delete my data?","Delete shots or peptides inside the app. Deleting the app removes the data stored on your device. To also remove iCloud copies, go to iPhone Settings &gt; your name &gt; iCloud &gt; Manage Account Storage &gt; Nexdose, then delete the data."),
 ("Is Nexdose free?","Yes. The core app is free, with no ads and no account. <a href=\"../plus/\">Nexdose Plus</a> is an optional one-time $14.99 purchase, shared through Family Sharing."),
-("I installed version 1.0. Do I have to pay for Plus?","No. If you first installed version 1.0, Plus is yours free."),
+("I installed Nexdose at launch. Do I have to pay for Plus?","No. Everyone who installs before the Plus update arrives keeps Plus free."),
 ("Which devices does Nexdose work on?","iPhone with iOS 18 or later. The Apple Watch app needs watchOS 11 or later."),
 ("Is the calculator medical advice?","No. The calculators only do arithmetic. Always confirm any dose or reconstitution with your healthcare provider."),
 ("Does Nexdose collect my data?","No. There's no account, no ads and no analytics. Your data stays on your iPhone and, if you choose, your own iCloud. See the <a href=\"../privacy-policy/\">Privacy Policy</a>."),
