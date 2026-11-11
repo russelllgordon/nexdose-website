@@ -77,3 +77,10 @@ footer.site a{color:var(--muted)}
   section{padding:36px 0}
   nav.main{gap:14px}
 }
+.hero.dark{background:#0b0918;color:#f1ecfb;padding-bottom:0}
+.hero.dark p.lead{color:#c9bfe3}
+.hero.dark .badges li{background:rgba(255,255,255,.09);color:#f1ecfb}
+.hero.dark .note{color:#a99fc4}
+.hero.dark .note a{color:#c4adff}
+.hero.dark .btn{background:#8b5ce6;color:#fff}
+.hero-img img{display:block;width:100%;max-width:1100px;margin:28px auto 0;-webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent),linear-gradient(to right,transparent,#000 6%,#000 94%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,#000 80%,transparent),linear-gradient(to right,transparent,#000 6%,#000 94%,transparent);mask-composite:intersect}

@@ -29,12 +29,13 @@ features = [
 ]
 feat_html = "".join(f'<div class="card"><h3>{t}</h3><p>{d}</p></div>' for t,d in features)
 body = f'''
-<section class="hero"><div class="wrap">
+<section class="hero dark"><div class="wrap">
 <h1>Track every dose.<br>Rotate every site.</h1>
 <p class="lead">Nexdose is a simple, private tracker for your weekly GLP-1 shot and other injections. Log a shot in one tap, see where to inject next, and never lose track of your schedule.</p>
 <ul class="badges"><li>No account</li><li>No ads</li><li>No subscription</li><li>Your data stays on your iPhone</li></ul>
 <a class="btn" href="{APPSTORE}">Download on the App Store</a>
 <p class="note">Free for iPhone. Works with semaglutide (Wegovy, Ozempic), tirzepatide (Mounjaro, Zepbound) and other injections.</p>
+<picture class="hero-img"><source srcset="assets/shots/hero.webp" type="image/webp"><img src="assets/shots/hero.jpg" alt="Five Nexdose screens: calendar, all peptides, Levels, weight log and peptide supply" width="1376" height="628"></picture>
 </div></section>
 
 <section class="alt"><div class="wrap">

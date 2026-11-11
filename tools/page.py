@@ -33,7 +33,7 @@ def render(slug, title, desc, body, extra_head=""):
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Nexdose app icon with calendar and body map screens">
 <meta name="twitter:image" content="{SITE}/assets/og-image.png">
-<link rel="stylesheet" href="{r}assets/style.css?v=5">
+<link rel="stylesheet" href="{r}assets/style.css?v=6">
 {extra_head}</head>
 <body>
 <header class="site"><div class="wrap">
