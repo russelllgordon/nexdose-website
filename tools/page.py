@@ -28,11 +28,11 @@ def render(slug, title, desc, body, extra_head=""):
 <meta name="theme-color" content="#6a3fd6">
 <link rel="icon" href="{r}assets/favicon-32.png" type="image/png">
 <link rel="apple-touch-icon" href="{r}assets/apple-touch-icon.png">
-<meta property="og:image" content="{SITE}/assets/og-image.png">
+<meta property="og:image" content="{SITE}/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Nexdose app icon with calendar and body map screens">
-<meta name="twitter:image" content="{SITE}/assets/og-image.png">
+<meta property="og:image:alt" content="Five iPhones showing Nexdose: calendar, peptide list, levels, weight and supply">
+<meta name="twitter:image" content="{SITE}/assets/og-image.jpg">
 <link rel="stylesheet" href="{r}assets/style.css?v=6">
 {extra_head}</head>
 <body>
