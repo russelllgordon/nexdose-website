@@ -1,5 +1,3 @@
 User-agent: *
-Disallow: /go/
-Disallow: /from-app/
 Allow: /
 Sitemap: https://www.nexdose.app/sitemap.xml
