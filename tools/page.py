@@ -45,7 +45,7 @@ def render(slug, title, desc, body, extra_head=""):
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Five iPhones showing Nexdose: calendar, peptide list, levels, weight and supply">
 <meta name="twitter:image" content="{SITE}/assets/og-image.jpg">
-<link rel="stylesheet" href="{r}assets/style.css?v=6">
+<link rel="stylesheet" href="{r}assets/style.css?v=7">
 {extra_head}</head>
 <body>
 <header class="site"><div class="wrap">
