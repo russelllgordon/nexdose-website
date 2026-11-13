@@ -3,6 +3,17 @@ SITE = "https://www.nexdose.app"
 NAV = [("", "Home"), ("plus/", "Plus"), ("how-to/", "How-to"), ("about/", "About"), ("support/", "Support")]
 FOOT = [("privacy-policy/", "Privacy Policy"), ("support/", "Support")]
 APPSTORE = "https://apps.apple.com/app/id6824021246"
+# App Store Connect provider token (Analytics > Acquisition > Campaigns). Empty until Russ shares it.
+PT = ""
+# Channels that get their own short link, nexdose.app/go/<name>/, counted as a page in Cloudflare.
+SOURCES = ["app", "telegram", "reddit", "instagram", "threads", "facebook", "tiktok", "youtube", "x", "email", "producthunt"]
+
+def store_link(campaign):
+    """App Store link tagged with a campaign, so App Store Connect shows installs per channel."""
+    return f"{APPSTORE}?pt={PT}&ct={campaign}&mt=8" if PT else APPSTORE
+
+# Cloudflare Web Analytics ignores query strings, so ?utm_source=x visits are sent through /go/x/ to be counted.
+UTM_JS = "<script>(function(){try{var q=new URLSearchParams(location.search),s=(q.get('utm_source')||'').toLowerCase();if(%s.indexOf(s)>-1&&location.pathname.indexOf('/go/')<0){location.replace('/go/'+s+'/?to='+encodeURIComponent(location.pathname+location.hash))}}catch(e){}})()</script>" % str(SOURCES).replace(" ", "")
 
 def render(slug, title, desc, body, extra_head=""):
     depth = slug.count("/")
@@ -14,6 +25,7 @@ def render(slug, title, desc, body, extra_head=""):
 <html lang="en">
 <head>
 <meta charset="utf-8">
+{UTM_JS}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
