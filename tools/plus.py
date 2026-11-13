@@ -1,4 +1,4 @@
-from page import render, write, APPSTORE
+from page import render, write, APPSTORE, store_link
 rows = [
  ("One-tap logging, calendar and list views",1,1),
  ("Scheduling and reminders",1,1),
@@ -21,7 +21,7 @@ body = f'''
 <section class="hero"><div class="wrap">
 <h1>Nexdose Plus</h1>
 <p class="lead">One purchase. $14.99. No subscription, ever. Shared with your family through Family Sharing.</p>
-<a class="btn" href="{APPSTORE}">Get Nexdose free</a>
+<a class="btn" href="{store_link('website')}">Get Nexdose free</a>
 <p class="note">Launch offer: everyone who installs before the Plus update arrives keeps Plus free, for good.</p>
 </div></section>
 <section class="alt"><div class="wrap plus-grid">

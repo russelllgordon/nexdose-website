@@ -4,7 +4,7 @@ NAV = [("", "Home"), ("plus/", "Plus"), ("how-to/", "How-to"), ("about/", "About
 FOOT = [("privacy-policy/", "Privacy Policy"), ("support/", "Support")]
 APPSTORE = "https://apps.apple.com/app/id6824021246"
 # App Store Connect provider token (Analytics > Acquisition > Campaigns). Empty until Russ shares it.
-PT = ""
+PT = "129632683"
 # Channels that get their own short link, nexdose.app/go/<name>/, counted as a page in Cloudflare.
 SOURCES = ["app", "telegram", "reddit", "instagram", "threads", "facebook", "tiktok", "youtube", "x", "email", "producthunt"]
 

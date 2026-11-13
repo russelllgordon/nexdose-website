@@ -1,4 +1,4 @@
-from page import render, write, APPSTORE
+from page import render, write, APPSTORE, store_link
 ld = '''<script type="application/ld+json">
 {"@context":"https://schema.org","@type":"MobileApplication","name":"Nexdose","operatingSystem":"iOS 18 or later","applicationCategory":"HealthApplication","description":"A simple, private injection tracker for weekly GLP-1 shots and other injections. One-tap logging, site rotation, reminders and reports. No account, no ads.","offers":[{"@type":"Offer","price":"0","priceCurrency":"USD","name":"Nexdose"},{"@type":"Offer","price":"14.99","priceCurrency":"USD","name":"Nexdose Plus (one-time purchase)"}],"author":{"@type":"Person","name":"Russell Gordon"},"url":"https://www.nexdose.app/"}
 </script>
@@ -33,7 +33,7 @@ body = f'''
 <h1>Track every dose.<br>Rotate every site.</h1>
 <p class="lead">Nexdose is a simple, private tracker for your weekly GLP-1 shot and other injections. Log a shot in one tap, see where to inject next, and never lose track of your schedule.</p>
 <ul class="badges"><li>No account</li><li>No ads</li><li>No subscription</li><li>Your data stays on your iPhone</li></ul>
-<a class="btn" href="{APPSTORE}">Download on the App Store</a>
+<a class="btn" href="{store_link('website')}">Download on the App Store</a>
 <p class="note">Free for iPhone. Works with semaglutide (Wegovy, Ozempic), tirzepatide (Mounjaro, Zepbound) and other injections.</p>
 <picture class="hero-img"><source srcset="assets/shots/hero.webp" type="image/webp"><img src="assets/shots/hero.jpg" alt="Five Nexdose screens: calendar, all peptides, Levels, weight log and peptide supply" width="1376" height="628"></picture>
 </div></section>
@@ -64,7 +64,7 @@ body = f'''
 <section class="alt" id="get"><div class="wrap" style="text-align:center">
 <h2>Get Nexdose</h2>
 <p class="section-intro" style="margin-left:auto;margin-right:auto">Free on iPhone, with an Apple Watch app. Requires iOS 18 or later.</p>
-<a class="btn" href="{APPSTORE}">Download on the App Store</a>
+<a class="btn" href="{store_link('website')}">Download on the App Store</a>
 <p class="note">Questions? Visit <a href="support/">Support</a> or email <a href="mailto:contact@nexdose.app">contact@nexdose.app</a>.</p>
 </div></section>
 '''
