@@ -8,6 +8,9 @@ PT = "129632683"
 # Channels that get their own short link, nexdose.app/go/<name>/, counted as a page in Cloudflare.
 SOURCES = ["app", "telegram", "reddit", "instagram", "threads", "facebook", "tiktok", "youtube", "x", "email", "producthunt"]
 
+# Official social profiles: shown in the footer. Add each one as Russ creates it.
+SOCIAL = [("Instagram", "https://www.instagram.com/nexdoseapp/")]
+
 def store_link(campaign):
     """App Store link tagged with a campaign, so App Store Connect shows installs per channel."""
     return f"{APPSTORE}?pt={PT}&ct={campaign}&mt=8" if PT else APPSTORE
@@ -19,7 +22,7 @@ def render(slug, title, desc, body, extra_head=""):
     depth = slug.count("/")
     r = "../" * depth
     nav = "".join(f'<a href="{r}{p}"{" aria-current=page" if p==slug else ""}>{n}</a>' for p, n in NAV)
-    foot = "".join(f'<a href="{r}{p}">{n}</a>' for p, n in FOOT)
+    foot = "".join(f'<a href="{r}{p}">{n}</a>' for p, n in FOOT) + "".join(f'<a href="{u}" rel="me">{n}</a>' for n, u in SOCIAL)
     url = f"{SITE}/{slug}"
     return f'''<!doctype html>
 <html lang="en">
