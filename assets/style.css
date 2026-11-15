@@ -88,3 +88,4 @@ footer.site a{color:var(--muted)}
 .siri .bubble{display:inline-block;margin:0 0 12px;padding:16px 22px;border-radius:22px 22px 22px 6px;background:linear-gradient(135deg,#8b5ce6,#472797);color:#fff;font-size:20px;font-weight:600;line-height:1.35}
 .siri .bubble em{font-style:normal;opacity:.8}
 .siri .bubble-note{color:var(--muted);margin:0}
+a.tag{text-decoration:none}a.tag:hover{background:var(--accent);color:#fff}
