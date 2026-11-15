@@ -9,7 +9,7 @@ PT = "129632683"
 SOURCES = ["app", "telegram", "reddit", "instagram", "threads", "facebook", "tiktok", "youtube", "x", "email", "producthunt"]
 
 # Official social profiles: shown in the footer. Add each one as Russ creates it.
-SOCIAL = [("Instagram", "https://www.instagram.com/nexdoseapp/")]
+SOCIAL = [("Instagram", "https://www.instagram.com/nexdoseapp/"), ("Facebook", "https://www.facebook.com/profile.php?id=61596660748596")]
 
 def store_link(campaign):
     """App Store link tagged with a campaign, so App Store Connect shows installs per channel."""
