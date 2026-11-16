@@ -31,7 +31,7 @@ feat_html = "".join(f'<div class="card"><h3>{t}</h3><p>{d}</p></div>' for t,d in
 body = f'''
 <section class="hero dark"><div class="wrap">
 <h1>Track every dose.<br>Rotate every site.</h1>
-<p class="lead">Nexdose is a simple, private tracker for your weekly GLP-1 shot and other injections. Log a shot in one tap, see where to inject next, and never lose track of your schedule.</p>
+<p class="lead">Nexdose puts your weekly GLP-1 shot and other injections on a simple, private calendar. Schedule it once and Nexdose remembers: it reminds you, logs each shot in one tap, and shows where to inject next.</p>
 <ul class="badges"><li>No account</li><li>No ads</li><li>No subscription</li><li>Your data stays on your iPhone</li></ul>
 <a class="btn" href="{store_link('website')}">Download on the App Store</a>
 <p class="note">Free for iPhone. Works with semaglutide (Wegovy, Ozempic), tirzepatide (Mounjaro, Zepbound) and other injections.</p>
@@ -50,18 +50,28 @@ body = f'''
 </div></section>
 
 <section class="alt"><div class="wrap">
+<h2>Made for how you inject</h2>
+<div class="grid">
+<a class="card" href="glp-1-shot-tracker/" style="text-decoration:none;color:inherit"><h3>Weekly GLP-1 shot</h3><p>A calendar, a shot-day reminder and one-tap logging.</p></a>
+<a class="card" href="injection-site-rotation/" style="text-decoration:none;color:inherit"><h3>Site rotation</h3><p>A body map that shows where to inject next.</p></a>
+<a class="card" href="shot-schedule/" style="text-decoration:none;color:inherit"><h3>Shot schedule</h3><p>Every peptide on one calendar. Schedule it once and forget it.</p></a>
+<a class="card" href="cycle-scheduler/" style="text-decoration:none;color:inherit"><h3>On and off cycles</h3><p>Set 8 weeks on, 4 off, and Nexdose does the counting.</p></a>
+</div>
+</div></section>
+
+<section><div class="wrap">
 <h2>Private by design</h2>
 <p class="section-intro">No sign-up. No ads. No personal questions. No analytics or tracking in the app. Everything you enter is stored on your iPhone, and optionally in your own private iCloud. We never see your data.</p>
 <a href="privacy-policy/">Read the privacy policy</a>
 </div></section>
 
-<section><div class="wrap">
+<section class="alt"><div class="wrap">
 <h2>Free to use. Plus is yours to keep.</h2>
 <p class="section-intro">The core app is free with no ads. Nexdose Plus adds advanced features for a one-time $14.99, shared with your family through Family Sharing. Never a subscription.</p>
 <a class="btn secondary" href="plus/">Compare Free and Plus</a>
 </div></section>
 
-<section class="alt" id="get"><div class="wrap" style="text-align:center">
+<section id="get"><div class="wrap" style="text-align:center">
 <h2>Get Nexdose</h2>
 <p class="section-intro" style="margin-left:auto;margin-right:auto">Free on iPhone, with an Apple Watch app. Requires iOS 18 or later.</p>
 <a class="btn" href="{store_link('website')}">Download on the App Store</a>
@@ -69,4 +79,4 @@ body = f'''
 </div></section>
 '''
 write("", render("", "Nexdose: Simple, Private GLP-1 Shot Tracker for iPhone",
- "Track your weekly GLP-1 shot in one tap. Site rotation, reminders, dose increases and reports. No account, no ads, no subscription.", body, ld))
+ "Schedule your weekly GLP-1 shot once and Nexdose remembers: a calendar, reminders, one-tap logging, site rotation and reports. No account, no ads, no subscription.", body, ld))

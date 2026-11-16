@@ -1,7 +1,7 @@
 import os, sys
 SITE = "https://www.nexdose.app"
 NAV = [("", "Home"), ("plus/", "Plus"), ("how-to/", "How-to"), ("about/", "About"), ("support/", "Support")]
-FOOT = [("privacy-policy/", "Privacy Policy"), ("support/", "Support")]
+FOOT = [("glp-1-shot-tracker/", "GLP-1 shot tracker"), ("injection-site-rotation/", "Site rotation"), ("shot-schedule/", "Shot schedule"), ("cycle-scheduler/", "Cycle scheduler"), ("privacy-policy/", "Privacy Policy"), ("support/", "Support")]
 APPSTORE = "https://apps.apple.com/app/id6824021246"
 # App Store Connect provider token (Analytics > Acquisition > Campaigns). Empty until Russ shares it.
 PT = "129632683"
