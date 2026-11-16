@@ -6,12 +6,14 @@ PAGES = [
     ("injection-site-rotation/", "Injection site rotation"),
     ("shot-schedule/", "Shot schedule calendar"),
     ("cycle-scheduler/", "On and off cycles"),
+    ("printable-shot-log/", "Free printable shot log"),
 ]
 BLURB = {
     "glp-1-shot-tracker/": "Never miss your weekly shot.",
     "injection-site-rotation/": "Know where to inject next.",
     "shot-schedule/": "Schedule it once. Nexdose remembers.",
     "cycle-scheduler/": "Cycles that run themselves.",
+    "printable-shot-log/": "A free PDF log and site chart to print.",
 }
 PLUS = '<a class="tag" href="../plus/" title="Part of Nexdose Plus">Plus</a>'
 
