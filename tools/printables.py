@@ -6,13 +6,17 @@ from reportlab.lib.colors import HexColor, white
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "assets", "printables")
-LOGO = os.path.join(ROOT, "assets", "logo-96.png")
+LOGO = os.path.join(OUT, "app-icon.png")  # full Nexdose icon with the name
 os.makedirs(OUT, exist_ok=True)
 
 PURPLE, INK, MUTED, LINE, SOFT = HexColor("#6a3fd6"), HexColor("#1d1433"), HexColor("#5c5470"), HexColor("#cfc6e6"), HexColor("#ece5fb")
 W, H = letter
 M = 40
 LINK = "www.nexdose.app/?utm_source=printable"
+STORE = "https://apps.apple.com/app/apple-store/id6824021246?pt=129632683&ct=printable&mt=8"
+from reportlab.graphics.barcode.qr import QrCodeWidget
+from reportlab.graphics.shapes import Drawing
+from reportlab.graphics import renderPDF
 
 SITES = ["Right arm (side)", "Left arm (side)", "Right flank", "Left flank",
          "Right abdomen, upper", "Left abdomen, upper", "Right abdomen, lower", "Left abdomen, lower",
@@ -20,23 +24,44 @@ SITES = ["Right arm (side)", "Left arm (side)", "Right flank", "Left flank",
 
 
 def header(c, title, sub):
-    c.drawImage(LOGO, M, H - M - 26, 26, 26, mask="auto")
-    c.setFillColor(INK); c.setFont("Helvetica-Bold", 20); c.drawString(M + 36, H - M - 20, title)
-    c.setFillColor(MUTED); c.setFont("Helvetica", 10); c.drawString(M, H - M - 46, sub)
+    L = 64
+    c.saveState(); p = c.beginPath(); p.roundRect(W - M - L, H - M - L + 6, L, L, 14); c.clipPath(p, stroke=0)
+    c.drawImage(LOGO, W - M - L, H - M - L + 6, L, L); c.restoreState()
+    c.linkURL(STORE, (W - M - L, H - M - L + 6, W - M, H - M + 6))
+    c.setFillColor(INK); c.setFont("Helvetica-Bold", 22); c.drawString(M, H - M - 18, title)
+    c.setFillColor(MUTED); c.setFont("Helvetica", 10)
+    words, line, y, maxw = sub.split(), "", H - M - 40, W - 2 * M - L - 20
+    for wd in words:
+        t = (line + " " + wd).strip()
+        if c.stringWidth(t, "Helvetica", 10) > maxw:
+            c.drawString(M, y, line); line, y = wd, y - 13
+        else:
+            line = t
+    c.drawString(M, y, line)
+
+
+def qr(c, x, y, size):
+    w = QrCodeWidget(STORE); b = w.getBounds(); bw, bh = b[2] - b[0], b[3] - b[1]
+    d = Drawing(size, size, transform=[size / bw, 0, 0, size / bh, 0, 0]); d.add(w)
+    renderPDF.draw(d, c, x, y)
+    c.linkURL(STORE, (x, y, x + size, y + size))
 
 
 def footer(c, page=None):
-    c.setStrokeColor(LINE); c.line(M, 50, W - M, 50)
-    c.setFillColor(MUTED); c.setFont("Helvetica", 8.5)
-    c.drawString(M, 36, "Free from Nexdose. For your own records only; not medical advice. Follow your healthcare provider's guidance.")
-    c.setFillColor(PURPLE); c.setFont("Helvetica-Bold", 9)
-    t = "Rather not use paper? The Nexdose app does this for you, free on iPhone: "
-    c.drawString(M, 23, t)
-    c.setFont("Helvetica", 9); x = M + c.stringWidth(t, "Helvetica-Bold", 9)
-    c.drawString(x, 23, "www.nexdose.app")
-    c.linkURL("https://" + LINK, (x, 20, x + c.stringWidth("www.nexdose.app", "Helvetica", 9), 32))
+    q = 66
+    c.setStrokeColor(LINE); c.setLineWidth(.6); c.line(M, 88, W - M, 88)
+    qr(c, W - M - q + 4, 16, q)
+    c.setFillColor(PURPLE); c.setFont("Helvetica-Bold", 10.5)
+    c.drawString(M, 66, "Rather not use paper? The Nexdose app does this for you.")
+    c.setFillColor(INK); c.setFont("Helvetica", 9.5)
+    c.drawString(M, 51, "Scan the code to get it free on the App Store, or visit")
+    x = M + c.stringWidth("Scan the code to get it free on the App Store, or visit ", "Helvetica", 9.5)
+    c.setFillColor(PURPLE); c.drawString(x, 51, "www.nexdose.app")
+    c.linkURL("https://" + LINK, (x, 48, x + c.stringWidth("www.nexdose.app", "Helvetica", 9.5), 60))
+    c.setFillColor(MUTED); c.setFont("Helvetica", 8)
+    c.drawString(M, 30, "Free from Nexdose. For your own records only; not medical advice. Follow your healthcare provider's guidance.")
     if page:
-        c.setFillColor(MUTED); c.setFont("Helvetica", 8.5); c.drawRightString(W - M, 36, page)
+        c.drawString(M, 19, page)
 
 
 def shot_log():
@@ -49,10 +74,10 @@ def shot_log():
     for p in (1, 2):
         header(c, "Shot Log", "Write down each shot as you take it. Use the site numbers from the Site Rotation Chart.")
         c.setFillColor(INK); c.setFont("Helvetica", 10)
-        y0 = H - M - 72
+        y0 = H - M - 76
         c.drawString(M, y0, "Name:"); c.setStrokeColor(LINE); c.line(M + 34, y0 - 2, M + 250, y0 - 2)
         c.drawString(M + 270, y0, "Year:"); c.line(M + 300, y0 - 2, M + 380, y0 - 2)
-        top = y0 - 20; rh = (top - 70) / (rows + 1)
+        top = y0 - 20; rh = (top - 100) / (rows + 1)
         c.setFillColor(PURPLE); c.roundRect(M, top - rh, tw, rh, 4, fill=1, stroke=0)
         x = M; c.setFillColor(white); c.setFont("Helvetica-Bold", 9.5)
         for n, w in cols:
@@ -135,7 +160,7 @@ def rotation_chart():
             bx = lx + 128 + b * bw
             c.rect(bx + 2, y + 6, bw - 4, rh - 12, fill=0, stroke=1)
     # Tips
-    ty2 = 120
+    ty2 = 156
     c.setFillColor(INK); c.setFont("Helvetica-Bold", 10.5); c.drawString(M, ty2, "How to use it")
     c.setFont("Helvetica", 9.5); c.setFillColor(MUTED)
     tips = ["Before each shot, look for the site with the oldest date, or one you haven't used yet.",
