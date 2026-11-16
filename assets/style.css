@@ -89,3 +89,10 @@ footer.site a{color:var(--muted)}
 .siri .bubble em{font-style:normal;opacity:.8}
 .siri .bubble-note{color:var(--muted);margin:0}
 a.tag{text-decoration:none}a.tag:hover{background:var(--accent);color:#fff}
+.landing{display:grid;grid-template-columns:1fr 280px;grid-template-areas:"head shot" "body shot";column-gap:56px;align-items:start}
+.l-head{grid-area:head}.l-body{grid-area:body}.l-shot{grid-area:shot;position:sticky;top:96px}
+.l-shot .shot{margin:0}
+.landing h1{font-size:clamp(32px,5vw,48px);line-height:1.1;margin:8px 0 16px;letter-spacing:-.02em}
+.landing .lead{font-size:clamp(18px,2.4vw,21px);color:var(--muted);margin:0 0 24px}
+.l-body h2:first-child{margin-top:40px}
+@media (max-width:760px){.landing{grid-template-columns:1fr;grid-template-areas:"head" "shot" "body"}.l-shot{position:static;max-width:240px;margin:28px auto 0}}

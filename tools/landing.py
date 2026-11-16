@@ -44,21 +44,20 @@ def page(slug, title, desc, h1, intro, img, alt, sections, campaign, note="", fa
                    for s, n in PAGES if s != slug)
     note_html = f'<p class="note">{note}</p>' if note else ""
     body = f'''
-<section class="alt"><div class="wrap plus-grid">
-<div>
-<h1 style="font-size:clamp(32px,5vw,48px);line-height:1.1;margin:0 0 16px;letter-spacing:-.02em">{h1}</h1>
-<p class="lead" style="font-size:clamp(18px,2.4vw,21px);color:var(--muted);margin:0 0 24px">{intro}</p>
+<section><div class="wrap landing">
+<div class="l-head">
+<h1>{h1}</h1>
+<p class="lead">{intro}</p>
 {btn}
 <p class="note">Free for iPhone, with an Apple Watch app. No account, no ads, no subscription.</p>
 </div>
-{shot(img, alt)}
-</div></section>
-
-<section><div class="wrap prose">
+<div class="l-shot">{shot(img, alt)}</div>
+<div class="l-body prose">
 {secs}
 {faq_html}
 {note_html}
 <p style="margin-top:32px">{btn}</p>
+</div>
 </div></section>
 
 <section class="alt"><div class="wrap">
