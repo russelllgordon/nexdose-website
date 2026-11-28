@@ -18,13 +18,15 @@ rows = [
 shot_html = "".join(f'<div class="shot-row"><h3>{t}</h3><p class="row-intro">{d}</p><div class="shots">{s}</div></div>' for t,d,s in rows)
 features = [
  ("Log in one tap","Tap a due shot to log it. Or log from a Lock Screen widget, your Apple Watch, or Siri."),
- ("Smart site rotation","A body map shows where you've injected and suggests the next spot, so you don't keep using the same one."),
  ("Flexible schedules","Weekly, daily, monthly, every weekday or custom. Several doses a day, on and off cycles, and mid-cycle starts."),
+ ("Step-by-step setup","Adding a peptide walks you through it: goal, schedule, cycle, injection sites, then optional extras. Editing uses the same simple pages."),
+ ("Badges and a Trophy case","Earn badges for streaks, doses logged, on-time shots, site rotation and more. Your Trophy case lives at the top of Today."),
+ ("Smart site rotation","A body map shows where you've injected and suggests the next spot. Each site area shows its zones, and you can turn tracking off for any peptide."),
  ("Reminders","Optional notifications at each dose time. Move or skip a single dose without changing your schedule."),
- ("Dose increases","Plan your titration once, and Nexdose moves you up to the next dose on schedule. <span class=tag>Plus</span>"),
+ ("Dose increases","Plan your titration once, preview it on a chart, and Nexdose moves you up to the next dose on schedule. <span class=tag>Plus</span>"),
  ("Weight and body stats","Track weight, body fat and muscle against a goal, with charts from one month to all time."),
- ("Levels","See a half-life graph of your estimated levels between shots. <span class=tag>Plus</span>"),
- ("Supply tracking","Know how much is left in each pen or vial before you run out. <span class=tag>Plus</span>"),
+ ("Levels","See a half-life graph of your estimated levels between shots, with an example graph to show how it works. <span class=tag>Plus</span>"),
+ ("Supply tracking","See what's left in each pen or vial at a glance, with support for 60 and 80 click pens and reorder reminders on your calendar. <span class=tag>Plus</span>"),
  ("Reports for your provider","Export your history as a clean PDF report <span class=tag>Plus</span> or a CSV file."),
 ]
 feat_html = "".join(f'<div class="card"><h3>{t}</h3><p>{d}</p></div>' for t,d in features)
@@ -36,6 +38,11 @@ body = f'''
 <a class="btn" href="{store_link('website')}">Download on the App Store</a>
 <p class="note">Free for iPhone. Works with semaglutide (Wegovy, Ozempic), tirzepatide (Mounjaro, Zepbound) and other injections.</p>
 <picture class="hero-img"><source srcset="assets/shots/hero.webp" type="image/webp"><img src="assets/shots/hero.jpg" alt="Five Nexdose screens: calendar, all peptides, Levels, weight log and peptide supply" width="1376" height="628"></picture>
+</div></section>
+
+<section><div class="wrap">
+<h2>New: a logbook that cheers you on</h2>
+<p class="section-intro">Nexdose now celebrates your consistency. Earn badges for streaks, doses logged, time with Nexdose, on-time shots and site rotation. A small banner pops up when you reach a milestone, and the Trophy case keeps everything you've earned. Add a photo or avatar and a nickname to make it yours. It all stays on your phone, with no account.</p>
 </div></section>
 
 <section class="alt"><div class="wrap">

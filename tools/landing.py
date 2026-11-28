@@ -111,7 +111,7 @@ page("injection-site-rotation/",
           f"<strong>Detailed map:</strong> 72 sites, for people who want finer control. {PLUS}",
       ])),
       ("Several injections? Each keeps its own history", "<p>Every peptide or medicine in Nexdose has its own schedule and its own site history, so you can see where each one went.</p>"),
-      ("Don't need it?", "<p>Turn site rotation off in Settings and use Nexdose just for scheduling and reminders.</p>"),
+      ("Don't need it?", "<p>Turn site tracking off for any single peptide and use Nexdose just for scheduling and reminders.</p>"),
       ],
      "web-sites",
      note="Nexdose records the sites you choose. It doesn't give medical advice about where or how to inject. Make sure to follow your provider's guidance.")
