@@ -6,13 +6,15 @@ rows = [
  ("Weight, body fat and muscle tracking",1,1),
  ("CSV export",1,1),
  ("Siri, widgets and Apple Watch",1,1),
+ ("Badges, Trophy case and profile",1,1),
+ ("Step-by-step peptide setup",1,1),
  ("Detailed body map (72 sites)",0,1),
  ("PDF report for your provider",0,1),
  ("Cycle scheduling (on and off cycles)",0,1),
  ("Weight import from CSV and Apple Health",0,1),
  ("Notes and symptoms after a shot",0,1),
- ("Auto dose-up (titration plans)",0,1),
- ("Supply tracking for pens and vials",0,1),
+ ("Auto dose-up (titration plans) with a preview chart",0,1),
+ ("Supply tracking for pens and vials, with reorder reminders",0,1),
  ("Levels (half-life graph)",0,1),
 ]
 def c(v): return '<span class="check" aria-label="Included">&#10003;</span>' if v else '<span aria-label="Not included">&ndash;</span>'
